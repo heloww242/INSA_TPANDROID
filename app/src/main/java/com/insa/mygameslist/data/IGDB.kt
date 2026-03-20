@@ -8,6 +8,12 @@ import com.insa.mygameslist.R
 object IGDB {
 
     lateinit var covers: List<Cover>
+    lateinit var games: List<Games>
+    lateinit var genres: List<Genres>
+    lateinit var platform_logos: List<Platform_logos>
+    lateinit var platforms: List<Platforms>
+
+
 
     fun load(context: Context) {
         val coversFromJson: List<Cover> = Gson().fromJson(
@@ -15,8 +21,38 @@ object IGDB {
             object : TypeToken<List<Cover>>() {}.type
         )
 
+        val gamesFromJson: List<Games> = Gson().fromJson(
+            context.resources.openRawResource(R.raw.games).bufferedReader(),
+            object : TypeToken<List<Games>>() {}.type
+        )
+        val genresFromJson: List<Genres> = Gson().fromJson(
+            context.resources.openRawResource(R.raw.genres).bufferedReader(),
+            object : TypeToken<List<Genres>>() {}.type
+        )
+        val platform_logosFromJson: List<Platform_logos> = Gson().fromJson(
+            context.resources.openRawResource(R.raw.platform_logos).bufferedReader(),
+            object : TypeToken<List<Platform_logos>>() {}.type
+        )
+        val platformsFromJson: List<Platforms> = Gson().fromJson(
+            context.resources.openRawResource(R.raw.platforms).bufferedReader(),
+            object : TypeToken<List<Platforms>>() {}.type
+        )
+
         covers = coversFromJson
+        games = gamesFromJson
+        genres = genresFromJson
+        platform_logos = platform_logosFromJson
+        platforms = platformsFromJson
     }
 }
 
+
 data class Cover(val id: Long, val url: String)
+
+data class Games(val id: Long, val cover: Long,val first_release_date:Long,val genres:List<Long>,val name:String,val platforms:List<Long>,val summary: String,val total_rating:Double)
+
+data class Genres(val id: Long, val name: String)
+
+data class Platform_logos(val id:Long,val url:String)
+
+data class Platforms(val id:Long,val name:String,val platform_logo:Long)
