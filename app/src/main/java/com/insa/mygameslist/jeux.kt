@@ -38,12 +38,11 @@ import coil3.compose.AsyncImage
 @Composable
 fun jeux(
     name: String,
-    id: Long,
     backStack: MutableList<Any>,
     url: String,
     genres: String,
     platforms: MutableList<String>,
-    summary: String,
+    resume: String,
     isFavori: Boolean,
     onToggleFavori: () -> Unit
 ) {
@@ -157,7 +156,7 @@ fun jeux(
                             .padding(top = 10.dp)
                             .fillMaxHeight()
                     ) {
-                        Text(text = summary, fontSize = 15.sp)
+                        Text(text = resume, fontSize = 15.sp)
                     }
                 }
                 Box(
@@ -167,7 +166,7 @@ fun jeux(
                         .padding(top = 10.dp)
                         .fillMaxHeight()
                 ) {
-                    Text(text = summary, fontSize = 15.sp)
+                    Text(text = resume, fontSize = 15.sp)
                 }
             }
         }

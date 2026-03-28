@@ -31,7 +31,7 @@ fun appel( //affichage du bloc de jeu
     genres: String,
     backStack: MutableList<Any>,
     id: Long, platforms: MutableList<String>,
-    summary: String,
+    resume: String,
     isFavori: Boolean,
     onToggleFavori: () -> Unit
 ) {
@@ -42,7 +42,7 @@ fun appel( //affichage du bloc de jeu
             .fillMaxWidth()
             .height(100.dp)
             .background(Color.LightGray, shape = RoundedCornerShape(16.dp))
-            .clickable { backStack.add(PageJeu(name, id, url, genres, platforms, summary)) }
+            .clickable { backStack.add(PageJeu(name, id, url, genres, platforms, resume)) }
     ) {
         Column(
             modifier = Modifier.height(100.dp).width(80.dp),

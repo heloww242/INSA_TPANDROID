@@ -5,6 +5,7 @@ import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import com.insa.mygameslist.R
 
+//Chargement des BDD (.json) necessaire à la réalisation du projet ainsi que déclaration des variables qui les composent
 object IGDB {
 
     lateinit var covers: List<Cover>
