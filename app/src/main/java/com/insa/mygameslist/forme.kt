@@ -72,7 +72,7 @@ fun forme(
                     titleContentColor = Color.Black,
                 ),
                 title = {
-                    if (rechercheActiv) { //fonction de recherche (Search Bar)
+                    if (rechercheActiv) { //si on est dans fonction de recherche (Search Bar)
                         SimpleSearchBar(
                             query = requete, // ce qu'on écrit dans la barre de recherche
                             onQueryChange = { onSearchQueryChange(it) },
@@ -83,7 +83,7 @@ fun forme(
                         Text("My Games List")
                     }
                 },
-                actions = {
+                actions = { //affichage selon si on a cliqué sur la barre de recherche ou non
                     if (rechercheActiv) {
                         IconButton(onClick = {
                             onRechercheActivChange(false)

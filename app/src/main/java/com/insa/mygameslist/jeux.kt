@@ -51,7 +51,7 @@ fun jeux(
         topBar = {
             TopAppBar(
                 colors = topAppBarColors(
-                    containerColor = Color.Magenta,
+                    containerColor = Color.LightGray,
                     titleContentColor = Color.Black,
                 ),
                 title = { Text(name) },

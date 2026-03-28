@@ -77,7 +77,8 @@ fun appel( //affichage du bloc de jeu
 
         IconButton(
             onClick = onToggleFavori,
-            modifier = Modifier.align(Alignment.CenterEnd)
+            modifier = Modifier
+                .align(Alignment.CenterEnd)
                 .padding(end = 8.dp)
         ) {
             if (isFavori) {
