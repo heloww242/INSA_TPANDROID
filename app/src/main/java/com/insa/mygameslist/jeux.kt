@@ -159,15 +159,6 @@ fun jeux(
                         Text(text = resume, fontSize = 15.sp)
                     }
                 }
-                Box(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(15.dp)
-                        .padding(top = 10.dp)
-                        .fillMaxHeight()
-                ) {
-                    Text(text = resume, fontSize = 15.sp)
-                }
             }
         }
     }
